@@ -46,7 +46,7 @@ $$
 \sigma'^{(\ell)}\!\big(z^{(\ell)}\big)
 $$
 ### Discrete Formulation
-Define:
+Consider the identity of the error signal:
 $$
 \delta^{(\ell)} \;=\; \frac{\partial \mathcal{L}}{\partial z^{(\ell)}}
 $$
@@ -58,6 +58,8 @@ $$
 $$ where:
 * $\frac{\partial \mathcal{L}}{\partial h^{(L)}} = \mathcal{L}(h^{(L)}, y)$ is the *base* loss function to be propagated backwards
 	* For example (in MSE) $\mathcal{L}(h^{(L)}, y) = \frac{1}{2}\Vert h^{(L)} - y\Vert^2$
+* $\sigma'^{(L)}$ is the derivative of the activation function $\sigma$
+	* For example (in ReLU) $\sigma'(z) = \begin{cases} 1 & z > 0, \quad \ 0 & z \le 0  \end{cases}$
 For each intermediate layer, we propagate the errors:
 $$
 \boxed{

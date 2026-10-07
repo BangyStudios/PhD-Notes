@@ -2,12 +2,33 @@ An optimization step updates the model parameters $\theta$ using the gradients $
 
 ---
 ## Definition
+Trivially recall (*ex nilho* from your big brain) that:
+$$
+\begin{aligned}
+\nabla_\theta\mathcal{L}(\theta) &= 
+\left\{
+\frac{\partial\mathcal{L}}{\partial W^{(1)}}, 
+\frac{\partial\mathcal{L}}{\partial b^{(1)}},
+...,
+\frac{\partial\mathcal{L}}{\partial W^{(L)}}, 
+\frac{\partial\mathcal{L}}{\partial b^{(L)}}
+\right\} \\
+-\nabla_\theta\mathcal{L}(\theta) &= 
+\left\{
+-\frac{\partial\mathcal{L}}{\partial W^{(1)}}, 
+-\frac{\partial\mathcal{L}}{\partial b^{(1)}},
+...,
+-\frac{\partial\mathcal{L}}{\partial W^{(L)}}, 
+-\frac{\partial\mathcal{L}}{\partial b^{(L)}}
+\right\}
+\end{aligned}
+$$
 ### Stochastic Gradient Descent (SGD)
 **Continuous (gradient flow) formulation** — the continuous-time limit, a differential equation whose solution minimizes $\mathcal{L}$:
 $$
 \frac{d\theta}{dt} = -\nabla_\theta \mathcal{L}(\theta)
 $$
-**Discrete (per-step) formulation** — the practical update rule at step $t$:
+**Discrete formulation** — the practical update rule at step $t$:
 $$
 \theta_t = \theta_{t-1} - \eta\, \nabla_\theta \mathcal{L}(\theta_{t-1})
 $$
@@ -47,22 +68,16 @@ Current parameters:
 $$
 W^{(2)} = \begin{bmatrix}1&2\\3&4\end{bmatrix}, \qquad W^{(1)} = \begin{bmatrix}1&0\\0&1\end{bmatrix}
 $$
-
----
 ### Step 1: Update $W^{(2)}$ (SGD)
 $$
 W^{(2)}_{\text{new}} = W^{(2)} - 0.1 \cdot \frac{\partial \mathcal{L}}{\partial W^{(2)}} = \begin{bmatrix}1&2\\3&4\end{bmatrix} - 0.1\begin{bmatrix}0.119&0\\-0.119&0\end{bmatrix} = \begin{bmatrix}0.988&2\\3.012&4\end{bmatrix}
 $$
 The weight from hidden unit 1 to class 0 decreased (suppresses class 0), and to class 1 increased (boosts class 1) — both in the direction of the true label.
-
----
 ### Step 2: Update $W^{(1)}$ (SGD)
 $$
 W^{(1)}_{\text{new}} = \begin{bmatrix}1&0\\0&1\end{bmatrix} - 0.1\begin{bmatrix}-0.238&0\\0&0\end{bmatrix} = \begin{bmatrix}1.024&0\\0&1\end{bmatrix}
 $$
 Entries with zero gradient are unchanged — no update occurs where the network had no influence.
-
----
 ### Step 3: Adam update (single entry, $t=1$)
 For the scalar entry $W^{(2)}_{11}$, with $g_1 = 0.119$, $m_0 = v_0 = 0$, defaults $\beta_1=0.9$, $\beta_2=0.999$, $\varepsilon=10^{-8}$, $\eta=0.001$:
 $$
@@ -79,9 +94,7 @@ W^{(2)}_{11,\,\text{new}} = 1 - 0.001 \cdot \frac{0.119}{\sqrt{0.0142} + 10^{-8}
 $$
 
 At step $t=1$, bias correction produces $\hat{m}_1 / \sqrt{\hat{v}_1} \approx 1$ regardless of gradient magnitude, so the first update is always approximately $\eta$ in size — well-behaved even for unusual gradient scales.
-
----
-### Interpretation
+### Discussion
 - SGD applies a uniform step along the negative gradient direction; Adam scales each parameter's step by the history of its gradient magnitude.
 - Parameters with zero gradient (e.g. entire second column of $W^{(1)}$) are never updated — they are not in the computation path for the given input and cannot learn from it.
 - Updated parameters are stored and used in the next [forward pass](4-Forward_Pass.md). Gradients are [zeroed](8-Zero_Gradients.md) before the next batch.
