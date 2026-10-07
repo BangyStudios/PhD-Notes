@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 16.5
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 16.5/100; note last modified 2026-05-08) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 Backpropagation computes the gradient of the loss $\mathcal{L}$ with respect to every parameter $\theta$ by applying the **chain rule** backwards through the computation graph built during the forward pass.
 
 ---

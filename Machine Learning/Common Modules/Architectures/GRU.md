@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 12.7
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 12.7/100; note last modified 2026-09-29) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A gated recurrent unit (GRU) is an [RNN](RNN.md) variant that uses two multiplicative gates to interpolate between the previous hidden state and a new candidate state, retaining long-range information like an [LSTM](LSTM.md) with fewer parameters and no separate cell state.
 
 ---

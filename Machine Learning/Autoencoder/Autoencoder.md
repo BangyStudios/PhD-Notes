@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 19.4
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 19.4/100; note last modified 2026-10-05) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 An autoencoder is a neural network trained to reconstruct its input by compressing it through a bottleneck, forcing the network to learn a compact latent representation.
 
 ---

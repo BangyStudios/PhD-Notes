@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 5.4
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 5.4/100; note last modified 2026-10-05) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A Variational Autoencoder (VAE) is a generative model that learns to encode data into a structured latent space and decode it back, while regularizing that latent space with a prior distribution. It uses [KL Divergence](KL%20Divergence.md) as the regularization term.
 
 ---

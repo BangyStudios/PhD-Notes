@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 16.9
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 16.9/100; note last modified 2026-10-05) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A periodic autoencoder is a [variational autoencoder](Variational%20Autoencoder.md) built from circular convolutions, so its decoder generates exactly one period of a signal that tiles seamlessly, optionally under a slew-rate limit.
 
 ---

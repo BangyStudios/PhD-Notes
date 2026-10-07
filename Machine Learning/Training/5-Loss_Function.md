@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 27.6
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 27.6/100; note last modified 2026-05-08) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A loss function $\mathcal{L}$ is a scalar measure of how far the model's predictions $\hat{y}$ are from the true targets $y$, providing the training signal for [backpropagation](6-Backpropagation.md).
 
 ---

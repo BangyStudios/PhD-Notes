@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 13.1
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 13.1/100; note last modified 2026-07-02) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A Vector Quantized Variational Autoencoder (VQ-VAE) is a [VAE](VAE.md) variant that replaces the continuous latent space with a discrete codebook, enabling crisp reconstructions and learning of discrete representations without posterior collapse.
 
 ---

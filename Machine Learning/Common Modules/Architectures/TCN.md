@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 21.1
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 21.1/100; note last modified 2026-09-29) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A temporal convolutional network (TCN) models sequences with stacked causal, dilated 1-D [convolutions](../../Convolution/Convolution.md), so each output depends only on present and past inputs while the receptive field grows exponentially with depth.
 
 ---

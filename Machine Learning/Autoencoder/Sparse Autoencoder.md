@@ -1,3 +1,13 @@
+---
+tags:
+  - needs-review
+  - ai-suspected
+ai-review-score: 24.9
+ai-review-flagged: 2026-10-07
+---
+> [!warning] Under review
+> Flagged by an AI-text heuristic (score 24.9/100; note last modified 2026-06-06) as possibly AI-written. Verify the content and rewrite in your own words. When done, delete this callout and the `needs-review` and `ai-suspected` tags.
+
 A sparse autoencoder (SAE) is an [autoencoder](Autoencoder.md) that adds an $\ell_1$ penalty to the reconstruction loss, forcing the latent representation to use only a small number of active features for any given input.
 
 ---
